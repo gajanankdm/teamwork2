@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="fname">fname</label>
+                <input type="text" class="form-control">
+                   <label for="fname">lname</label>
+                <input type="text" class="form-control">
+                   <label for="fname">email</label>
+                <input type="text" class="form-control">
+                   <label for="fname">contact</label>
+                <input type="text" class="form-control">
+
+            </div>
+      <button mat-raised-button color="primary" class="btn btn-block">Add Student</button>
+
+
+        </div>
+
+<div class="col-md-8">
+
+<table class="table table-bordered table-striped mt-4 text-center">
+  <thead class="table-dark">
+    <tr>
+      <th>sr</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Contact</th>
+      <td>edit</td>
+      <td>remove</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let st of studentArr; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ st.fname }}</td>
+      <td>{{ st.lname }}</td>
+      <td>{{ st.email }}</td>
+      <td>{{ st.contact }}</td>
+     <td> <button mat-raised-button color="primary">edit</button></td>
+      <td><button mat-raised-button color="warn">delete</button></td>
+
+      
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+
+    </div>
+</div>
+
+
+
+
+
