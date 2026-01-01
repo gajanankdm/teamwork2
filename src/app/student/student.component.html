@@ -3,18 +3,28 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="fname">fname</label>
-                <input type="text" class="form-control">
+                <input #fname type="text" class="form-control">
                    <label for="fname">lname</label>
-                <input type="text" class="form-control">
+                <input #lname type="text" class="form-control">
                    <label for="fname">email</label>
-                <input type="text" class="form-control">
+                <input #email type="text" class="form-control">
                    <label for="fname">contact</label>
-                <input type="text" class="form-control">
+                <input #contact type="text" class="form-control">
 
             </div>
-      <button mat-raised-button color="primary" class="btn btn-block">Add Student</button>
+      <button 
+      *ngIf="!isInEditMode";
+      (click)="onAdd()"
+        mat-raised-button color="primary" class="btn btn-block">
+        Add Student
+      </button>
 
-
+      <button 
+      *ngIf="isInEditMode";
+      (click)="onUpdate()"
+        mat-raised-button color="primary" class="btn btn-block">
+        Update Student
+      </button>
         </div>
 
 <div class="col-md-8">
@@ -39,8 +49,20 @@
       <td>{{ st.lname }}</td>
       <td>{{ st.email }}</td>
       <td>{{ st.contact }}</td>
-     <td> <button mat-raised-button color="primary">edit</button></td>
-      <td><button mat-raised-button color="warn">delete</button></td>
+     <td> 
+        <button
+        (click)="onEdit(st)" 
+          mat-raised-button color="primary">
+          edit
+        </button>
+    </td>
+      <td>
+        <button
+          (click)="onRemove(st.id)"
+           mat-raised-button color="warn">
+          delete
+        </button>
+      </td>
 
       
     </tr>

@@ -7,6 +7,9 @@ import { StudentComponent } from './student/student.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
+
 import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
@@ -20,7 +23,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     MatIconModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
